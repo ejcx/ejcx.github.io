@@ -48,58 +48,68 @@
       <button id="20donate" type="button" class="btn btn-success rbtn">
         $20
       </button>
-      <form id="20form" style="display:none" action="/your-server-side-code" method="POST">
+      <form onsubmit="submitme();" id="20form" style="display:none" action="https://o10ngghxq9.execute-api.us-west-2.amazonaws.com/prod" method="POST">
       <script
         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="pk_test_A3FPSfF7WY5wRJ9zEDmrAezk"
         data-amount="2000"
         data-name="Evan and Amy"
         data-description="Honeymoon Donation"
-        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-image="https://evanandamy.com/ussmall.jpg?a=5"
+        data-bitcoin="true"
+        data-format="json"
         data-locale="auto">
       </script>
       </form>
-      <form id="50form" style="display:none" action="/your-server-side-code" method="POST">
+      <form onsubmit="submitme();" id="50form" style="display:none" action="https://o10ngghxq9.execute-api.us-west-2.amazonaws.com/prod" method="POST">
       <script
         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="pk_test_A3FPSfF7WY5wRJ9zEDmrAezk"
         data-amount="5000"
         data-name="Evan and Amy"
         data-description="Honeymoon Donation"
-        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-image="https://evanandamy.com/ussmall.jpg?a=4"
+        data-bitcoin="true"
+        data-format="json"
         data-locale="auto">
       </script>
       </form>
-      <form id="100form" style="display:none" action="/your-server-side-code" method="POST">
+      <form onsubmit="submitme();" id="100form" style="display:none" action="https://o10ngghxq9.execute-api.us-west-2.amazonaws.com/prod" method="POST">
       <script
         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="pk_test_A3FPSfF7WY5wRJ9zEDmrAezk"
         data-amount="10000"
         data-name="Evan and Amy"
         data-description="Honeymoon Donation"
-        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-image="https://evanandamy.com/ussmall.jpg?a=3"
+        data-bitcoin="true"
+        data-format="json"
         data-locale="auto">
       </script>
       </form>
-      <form id="200form" style="display:none" action="/your-server-side-code" method="POST">
+      <form onsubmit="submitme();" id="200form" style="display:none" action="https://o10ngghxq9.execute-api.us-west-2.amazonaws.com/prod" method="POST">
       <script
         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="pk_test_A3FPSfF7WY5wRJ9zEDmrAezk"
         data-amount="20000"
         data-name="Evan and Amy"
         data-description="Honeymoon Donation"
-        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-image="https://evanandamy.com/ussmall.jpg?a=2"
+        data-bitcoin="true"
+        data-format="json"
         data-locale="auto">
       </script>
       </form>
-      <form id="20form" style="display:none" action="/your-server-side-code" method="POST">
+      <form onsubmit="submitme();" id="20form" style="display:none" action="https://o10ngghxq9.execute-api.us-west-2.amazonaws.com/prod" method="POST">
       <script
         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
         data-key="pk_test_A3FPSfF7WY5wRJ9zEDmrAezk"
         data-amount="2000"
         data-name="Evan and Amy"
         data-description="Honeymoon Donation"
-        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-image="https://evanandamy.com/ussmall.jpg?a=1"
+        data-bitcoin="true"
+        data-format="json"
         data-locale="auto">
       </script>
       </form>
@@ -178,44 +188,68 @@
 var stripe = Stripe('pk_test_A3FPSfF7WY5wRJ9zEDmrAezk');
     </script>
 <script>
+var handler = StripeCheckout.configure({
+  key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+  image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
+  locale: 'auto',
+  token: function(token) {
+    // You can access the token ID with `token.id`.
+    // Get the token ID to your server-side code for use.
+    $.ajax({
+      url: "https://o10ngghxq9.execute-api.us-west-2.amazonaws.com/prod",
+      dataType: "json",
+      type: "POST",
+      success: function(e) {
+        console.log(e);
+      },
+      failure: function(e) {
+        console.log(e);
+      },
+      data:token
+    });
+  }
+});
   $("#20donate").click(function() {
-    var children = $("#20form").children()
-    for (var jj=0; jj<children.length; jj++){
-      if (children[jj].className == "stripe-button-el") {
-          children[jj].click();
-          break;
-      }
-    }
+    handler.open({
+      name: 'Evan and Amy',
+      description: 'Honeymoon Donation',
+      zipCode: true,
+      amount: 2000,
+      bitcoin: true
+    });
+    e.preventDefault();
   })
   $("#50donate").click(function() {
-    var children = $("#50form").children()
-    for (var jj=0; jj<children.length; jj++){
-      if (children[jj].className == "stripe-button-el") {
-          children[jj].click();
-          break;
-      }
-    }
-  })
+    handler.open({
+      name: 'Evan and Amy',
+      description: 'Honeymoon Donation',
+      zipCode: true,
+      amount: 5000,
+      bitcoin: true
+    });
+    e.preventDefault();
+  });
   $("#100donate").click(function() {
-    var children = $("#100form").children()
-    for (var jj=0; jj<children.length; jj++){
-      if (children[jj].className == "stripe-button-el") {
-          children[jj].click();
-          break;
-      }
-    }
+    handler.open({
+      name: 'Evan and Amy',
+      description: 'Honeymoon Donation',
+      zipCode: true,
+      amount: 10000,
+      bitcoin: true
+    });
+    e.preventDefault();
   })
   $("#200donate").click(function() {
-    var children = $("#200form").children()
-    for (var jj=0; jj<children.length; jj++){
-      if (children[jj].className == "stripe-button-el") {
-          children[jj].click();
-          break;
-      }
-    }
-  })
+    handler.open({
+      name: 'Evan and Amy',
+      description: 'Honeymoon Donation',
+      zipCode: true,
+      amount: 20000,
+      bitcoin: true
+    });
+    e.preventDefault();
+  });
 </script>
-
 </body>
 </html>
 
