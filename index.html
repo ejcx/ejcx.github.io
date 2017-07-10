@@ -45,18 +45,73 @@
   </div>
   <div class="col-md-4 testimonial">
     <div style="text-align:center;">
-      <button type="button" class="btn btn-success rbtn">$20</button>
-      <button type="button" class="btn btn-success bbtn">$50</button>
-      <button type="button" class="btn btn-success rbtn">$100</button>
-      <button type="button" class="btn btn-success rbtn">$200</button>
+      <button id="20donate" type="button" class="btn btn-success rbtn">
+        $20
+      </button>
+      <form id="20form" style="display:none" action="/your-server-side-code" method="POST">
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="pk_test_A3FPSfF7WY5wRJ9zEDmrAezk"
+        data-amount="2000"
+        data-name="Evan and Amy"
+        data-description="Honeymoon Donation"
+        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-locale="auto">
+      </script>
+      </form>
+      <form id="50form" style="display:none" action="/your-server-side-code" method="POST">
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="pk_test_A3FPSfF7WY5wRJ9zEDmrAezk"
+        data-amount="5000"
+        data-name="Evan and Amy"
+        data-description="Honeymoon Donation"
+        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-locale="auto">
+      </script>
+      </form>
+      <form id="100form" style="display:none" action="/your-server-side-code" method="POST">
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="pk_test_A3FPSfF7WY5wRJ9zEDmrAezk"
+        data-amount="10000"
+        data-name="Evan and Amy"
+        data-description="Honeymoon Donation"
+        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-locale="auto">
+      </script>
+      </form>
+      <form id="200form" style="display:none" action="/your-server-side-code" method="POST">
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="pk_test_A3FPSfF7WY5wRJ9zEDmrAezk"
+        data-amount="20000"
+        data-name="Evan and Amy"
+        data-description="Honeymoon Donation"
+        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-locale="auto">
+      </script>
+      </form>
+      <form id="20form" style="display:none" action="/your-server-side-code" method="POST">
+      <script
+        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="pk_test_A3FPSfF7WY5wRJ9zEDmrAezk"
+        data-amount="2000"
+        data-name="Evan and Amy"
+        data-description="Honeymoon Donation"
+        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+        data-locale="auto">
+      </script>
+      </form>
+      <button id="50donate" type="button" class="btn btn-success bbtn">$50</button>
+      <button id="100donate" type="button" class="btn btn-success rbtn">$100</button>
+      <button id="200donate" type="button" class="btn btn-success rbtn">$200</button>
       <button type="button" class="btn btn-success rbtn">Other</button>
     </div>
   </div>
 </div>
-
     </div>
   </div>
-
   <div class="text-block-narrow" style="text-align: center !important; margin-top: 50px;">
     <div class="paragraph text-item-left"><h2 id="try-magic-now">Try Magic now</h2>
 <p>You can start using Magic right now. We&#39;re confident we&#39;ve developed a service you&#39;ll absolutely love. Try it now!</p>
@@ -99,7 +154,7 @@
   </div>
 </div>
 
-  <script defer src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 <!-- Google Analytics Code -->
@@ -118,6 +173,49 @@
       analytics.page();
         }}();
     </script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+var stripe = Stripe('pk_test_A3FPSfF7WY5wRJ9zEDmrAezk');
+    </script>
+<script>
+  $("#20donate").click(function() {
+    var children = $("#20form").children()
+    for (var jj=0; jj<children.length; jj++){
+      if (children[jj].className == "stripe-button-el") {
+          children[jj].click();
+          break;
+      }
+    }
+  })
+  $("#50donate").click(function() {
+    var children = $("#50form").children()
+    for (var jj=0; jj<children.length; jj++){
+      if (children[jj].className == "stripe-button-el") {
+          children[jj].click();
+          break;
+      }
+    }
+  })
+  $("#100donate").click(function() {
+    var children = $("#100form").children()
+    for (var jj=0; jj<children.length; jj++){
+      if (children[jj].className == "stripe-button-el") {
+          children[jj].click();
+          break;
+      }
+    }
+  })
+  $("#200donate").click(function() {
+    var children = $("#200form").children()
+    for (var jj=0; jj<children.length; jj++){
+      if (children[jj].className == "stripe-button-el") {
+          children[jj].click();
+          break;
+      }
+    }
+  })
+</script>
+
 </body>
 </html>
 
