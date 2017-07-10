@@ -206,7 +206,7 @@ var handler = StripeCheckout.configure({
       failure: function(e) {
         console.log(e);
       },
-      data:token
+      data:JSON.stringify(token),
     });
   }
 });
