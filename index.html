@@ -48,75 +48,18 @@
       <button id="20donate" type="button" class="btn btn-success rbtn">
         $20
       </button>
-      <form onsubmit="submitme();" id="20form" style="display:none" action="https://o10ngghxq9.execute-api.us-west-2.amazonaws.com/prod" method="POST">
-      <script
-        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="pk_test_A3FPSfF7WY5wRJ9zEDmrAezk"
-        data-amount="2000"
-        data-name="Evan and Amy"
-        data-description="Honeymoon Donation"
-        data-image="https://evanandamy.com/ussmall.jpg?a=5"
-        data-bitcoin="true"
-        data-format="json"
-        data-locale="auto">
-      </script>
-      </form>
-      <form onsubmit="submitme();" id="50form" style="display:none" action="https://o10ngghxq9.execute-api.us-west-2.amazonaws.com/prod" method="POST">
-      <script
-        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="pk_test_A3FPSfF7WY5wRJ9zEDmrAezk"
-        data-amount="5000"
-        data-name="Evan and Amy"
-        data-description="Honeymoon Donation"
-        data-image="https://evanandamy.com/ussmall.jpg?a=4"
-        data-bitcoin="true"
-        data-format="json"
-        data-locale="auto">
-      </script>
-      </form>
-      <form onsubmit="submitme();" id="100form" style="display:none" action="https://o10ngghxq9.execute-api.us-west-2.amazonaws.com/prod" method="POST">
-      <script
-        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="pk_test_A3FPSfF7WY5wRJ9zEDmrAezk"
-        data-amount="10000"
-        data-name="Evan and Amy"
-        data-description="Honeymoon Donation"
-        data-image="https://evanandamy.com/ussmall.jpg?a=3"
-        data-bitcoin="true"
-        data-format="json"
-        data-locale="auto">
-      </script>
-      </form>
-      <form onsubmit="submitme();" id="200form" style="display:none" action="https://o10ngghxq9.execute-api.us-west-2.amazonaws.com/prod" method="POST">
-      <script
-        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="pk_test_A3FPSfF7WY5wRJ9zEDmrAezk"
-        data-amount="20000"
-        data-name="Evan and Amy"
-        data-description="Honeymoon Donation"
-        data-image="https://evanandamy.com/ussmall.jpg?a=2"
-        data-bitcoin="true"
-        data-format="json"
-        data-locale="auto">
-      </script>
-      </form>
-      <form onsubmit="submitme();" id="20form" style="display:none" action="https://o10ngghxq9.execute-api.us-west-2.amazonaws.com/prod" method="POST">
-      <script
-        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-        data-key="pk_test_A3FPSfF7WY5wRJ9zEDmrAezk"
-        data-amount="2000"
-        data-name="Evan and Amy"
-        data-description="Honeymoon Donation"
-        data-image="https://evanandamy.com/ussmall.jpg?a=1"
-        data-bitcoin="true"
-        data-format="json"
-        data-locale="auto">
-      </script>
-      </form>
-      <button id="50donate" type="button" class="btn btn-success bbtn">$50</button>
-      <button id="100donate" type="button" class="btn btn-success rbtn">$100</button>
-      <button id="200donate" type="button" class="btn btn-success rbtn">$200</button>
-      <button type="button" class="btn btn-success rbtn">Other</button>
+      <button id="50donate" type="button" class="btn btn-success bbtn">
+        $50
+      </button>
+      <button id="100donate" type="button" class="btn btn-success rbtn">
+        $100
+      </button>
+      <button id="200donate" type="button" class="btn btn-success rbtn">
+        $200
+      </button>
+      <button type="button" class="btn btn-success rbtn">
+        Other
+      </button>
     </div>
   </div>
 </div>
@@ -189,7 +132,7 @@ var stripe = Stripe('pk_test_A3FPSfF7WY5wRJ9zEDmrAezk');
     </script>
 <script>
 var handler = StripeCheckout.configure({
-  key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+  key: 'pk_test_A3FPSfF7WY5wRJ9zEDmrAezk",
   image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
   locale: 'auto',
   token: function(token) {
