@@ -128,6 +128,7 @@
     </script>
     <script src="https://checkout.stripe.com/checkout.js"></script>
 <script>
+var amount = 0;
 var handler = StripeCheckout.configure({
   key: 'pk_test_A3FPSfF7WY5wRJ9zEDmrAezk',
   image: 'https://stripe.com/img/documentation/checkout/marketplace.png',
@@ -135,6 +136,7 @@ var handler = StripeCheckout.configure({
   token: function(token) {
     // You can access the token ID with `token.id`.
     // Get the token ID to your server-side code for use.
+    token.amount = amount;
     $.ajax({
       url: "https://o10ngghxq9.execute-api.us-west-2.amazonaws.com/prod",
       contentType:'application/json',
@@ -158,6 +160,7 @@ var handler = StripeCheckout.configure({
       amount: 2000,
       bitcoin: true
     });
+    amount = 2000;
     e.preventDefault();
   })
   $("#50donate").click(function() {
@@ -168,6 +171,7 @@ var handler = StripeCheckout.configure({
       amount: 5000,
       bitcoin: true
     });
+    amount = 5000;
     e.preventDefault();
   });
   $("#100donate").click(function() {
@@ -178,6 +182,7 @@ var handler = StripeCheckout.configure({
       amount: 10000,
       bitcoin: true
     });
+    amount = 10000;
     e.preventDefault();
   })
   $("#200donate").click(function() {
@@ -188,6 +193,7 @@ var handler = StripeCheckout.configure({
       amount: 20000,
       bitcoin: true
     });
+    amount = 20000;
     e.preventDefault();
   });
 </script>
