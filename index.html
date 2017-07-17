@@ -56,16 +56,16 @@
         <div class="col-md-4 testimonial">
           <div style="text-align:center;margin-top:25px;">
             <button id="20donate" type="button" class="btn btn-success rbtn">
-              $20
-            </button>
-            <button id="50donate" type="button" class="btn btn-success bbtn">
               $50
             </button>
-            <button id="100donate" type="button" class="btn btn-success rbtn">
+            <button id="50donate" type="button" class="btn btn-success bbtn">
               $100
             </button>
+            <button id="100donate" type="button" class="btn btn-success rbtn">
+              $250
+            </button>
             <button id="200donate" type="button" class="btn btn-success rbtn">
-              $200
+              $500
             </button>
           </div>
         </div>
@@ -158,24 +158,13 @@ var handler = StripeCheckout.configure({
       name: 'Evan and Amy',
       description: 'Honeymoon Donation',
       zipCode: true,
-      amount: 2000,
-      bitcoin: true
-    });
-    amount = 2000;
-    e.preventDefault();
-  })
-  $("#50donate").click(function() {
-    handler.open({
-      name: 'Evan and Amy',
-      description: 'Honeymoon Donation',
-      zipCode: true,
       amount: 5000,
       bitcoin: true
     });
     amount = 5000;
     e.preventDefault();
-  });
-  $("#100donate").click(function() {
+  })
+  $("#50donate").click(function() {
     handler.open({
       name: 'Evan and Amy',
       description: 'Honeymoon Donation',
@@ -185,16 +174,27 @@ var handler = StripeCheckout.configure({
     });
     amount = 10000;
     e.preventDefault();
+  });
+  $("#100donate").click(function() {
+    handler.open({
+      name: 'Evan and Amy',
+      description: 'Honeymoon Donation',
+      zipCode: true,
+      amount: 25000,
+      bitcoin: true
+    });
+    amount = 25000;
+    e.preventDefault();
   })
   $("#200donate").click(function() {
     handler.open({
       name: 'Evan and Amy',
       description: 'Honeymoon Donation',
       zipCode: true,
-      amount: 20000,
+      amount: 50000,
       bitcoin: true
     });
-    amount = 20000;
+    amount = 50000;
     e.preventDefault();
   });
 </script>
