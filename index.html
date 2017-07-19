@@ -197,7 +197,7 @@ var handler = StripeCheckout.configure({
     amount = 50000;
     e.preventDefault();
   });
-  if (document.hostname && document.hostname.includes("evanandamy")) {
+  if (document.location.hostname && document.location.hostname.includes("evanandamy")) {
     $("#us").text("Evan and Amy");
   } else {
     $("#us").text("Amy and Evan");
