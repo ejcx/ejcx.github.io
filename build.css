@@ -606,7 +606,8 @@ html {
       display: inline-block;
       margin: 10px 25px; }
   .magic-home .testimonials {
-    background: #3aa3e3;
+    background: #bf80ff;
+    background-color: #bf80ff;
     border-bottom: 1px solid #efefef;
     border-top: 1px solid #efefef;
     margin-bottom: 0px;
@@ -1013,4 +1014,9 @@ ul.progress {
   margin-top:3px;
   font-size:32px;
   min-width:200px;
+}
+
+.btn-success{
+  background-color:#E6FFF2;
+  color:black;
 }
